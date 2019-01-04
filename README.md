@@ -13,7 +13,7 @@ This is an asyncio based event bus for Python 3.7
 `pip install cbpi-eventbus`
 
 ## Example
-```
+```python
 import asyncio
 from cbpi_eventbus.eventbus import CBPiEventBus, on_event
 
