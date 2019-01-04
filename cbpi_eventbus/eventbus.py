@@ -1,3 +1,5 @@
+__all__ = ["CBPiEventBus", "on_event"]
+
 import asyncio
 import inspect
 import logging

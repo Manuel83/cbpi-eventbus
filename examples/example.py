@@ -1,7 +1,7 @@
 import asyncio
 
 
-from src.eventbus import CBPiEventBus, on_event
+from cbpi_eventbus.eventbus import CBPiEventBus, on_event
 
 bus = CBPiEventBus(asyncio.get_event_loop())
 
