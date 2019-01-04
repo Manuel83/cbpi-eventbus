@@ -17,7 +17,7 @@ This is an asyncio based event bus for Python 3.7. The bus is heart of [CraftBee
 import asyncio
 from cbpi_eventbus.eventbus import CBPiEventBus, on_event
 
-# Creact bus
+# Create EventBus
 bus = CBPiEventBus(asyncio.get_event_loop())
 
 class Sample(object):
@@ -25,7 +25,7 @@ class Sample(object):
     @on_event("sensor/+/on")
     async def test(self, topic, param1, **kwargs):
         """
-        This method listen on all sensor on topics. i.e: sensor/1/on sensor/2/on
+        This method listens on all sensor on topics. i.e: sensor/1/on sensor/2/on
         :param topic: the current event topic
         :param kwargs: just accept all other args
         :return: None
@@ -36,7 +36,7 @@ class Sample(object):
     @on_event("sensor/#")
     async def test2(self, topic, **kwargs):
         """
-        This method listen on all sensor topics. i.e: sensor/1/on sensor/2/off sensor/somethingelse
+        This method listens on all sensor topics. i.e: sensor/1/on sensor/2/off sensor/somethingelse
         :param topic: the current event topic
         :param kwargs: just accept all other args
         :return: None
@@ -46,7 +46,7 @@ class Sample(object):
     @on_event("sensor/+/off")
     async def test3(self, topic, **kwargs):
         """
-        This method listen on all sensor on topics. i.e: sensor/1/off sensor/2/off
+        This method listens on all sensor on topics. i.e: sensor/1/off sensor/2/off
         :param topic: the current event topic
         :param kwargs: just accept all other args
         :return: None
@@ -94,6 +94,7 @@ The topic concept is inspired by MQTT topic patters.
 Example: `sensor/1/on
 
 The topic consists of one or more topic levels. Each topic level is separated by a forward slash (topic level separator).
+It's common practice not to start with a slash at the beginning.
 
 ### Wildcards
 
