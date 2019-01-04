@@ -4,9 +4,12 @@ This is an asyncio based event bus for Python 3.7. The bus is heart of [CraftBee
 
 # Highlight
 
-* Topic based event subscription supporting wildcards (inspired by MQTT topic pattern)
-* Subscription via decorator or register method
-* Subscribe to listen once for an event
+- Topic based event subscription supporting wildcards (inspired by MQTT topic pattern)
+- Subscription via decorator or register method
+- Subscribe to Listen Once
+- Future Support to listen for event results
+- Timeout Handling
+
 
 ## Installation
 

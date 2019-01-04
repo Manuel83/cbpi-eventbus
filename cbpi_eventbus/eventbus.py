@@ -4,10 +4,6 @@ import asyncio
 import inspect
 import logging
 
-import yaml
-from cbpi_api.exceptions import CBPiException
-
-
 def on_event(topic):
     def real_decorator(func):
         func.eventbus = True
@@ -55,7 +51,7 @@ class CBPiEventBus(object):
         def get(self, key):
             r = self.results.get(key)
             if r is None:
-                raise CBPiException("Event Key %s not found." % key)
+                raise KeyError("Event Key %s not found." % key)
             return (r.result, r.timeout)
 
     def register(self, topic, method, once=False):
@@ -211,11 +207,4 @@ class CBPiEventBus(object):
     def register_object(self, obj):
 
         for method in [getattr(obj, f) for f in dir(obj) if callable(getattr(obj, f)) and hasattr(getattr(obj, f), "eventbus")]:
-            doc = None
-            if method.__doc__ is not None:
-                try:
-                    doc = yaml.load(method.__doc__)
-                    doc["topic"] = method.__getattribute__("topic")
-                except:
-                    pass
             self.register(method.__getattribute__("topic"), method)
