@@ -1,6 +1,6 @@
-# CraftBeerPi Event Bus
+# CraftBeerPi Event Bus (BETA)
 
-This is an asyncio based event bus for Python 3.7
+This is an asyncio based event bus for Python 3.7. The bus is heart of [CraftBeerPI](http://www.craftbeerpi.com "CraftBeerPI") brewing controller.
 
 # Highlight
 
@@ -10,7 +10,7 @@ This is an asyncio based event bus for Python 3.7
 
 ## Installation
 
-`pip install cbpi-eventbus`
+`pip install -i https://test.pypi.org/simple/ cbpi-eventbus`
 
 ## Example
 ```python
