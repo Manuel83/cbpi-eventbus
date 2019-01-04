@@ -1,4 +1,4 @@
 *.pyc
 build
 dist
-#cbpi_eventbus.egg-info
+cbpi_eventbus.egg-info

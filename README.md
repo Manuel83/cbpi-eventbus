@@ -86,3 +86,49 @@ async def main():
 asyncio.run(main())
 
 ```
+
+## Topic
+
+The topic concept is inspired by MQTT topic patters.
+
+Example: `sensor/1/on
+
+The topic consists of one or more topic levels. Each topic level is separated by a forward slash (topic level separator).
+
+### Wildcards
+
+You can subscribe to an exact topic or use wild cards to listen for multiple events.
+
+#### Single Level +
+
+The + (plus) is used for single level
+
+Example: `sensor/+/on`
+
+Will match
+
+* `sensor/1/on`
+* `sensor/2/on`
+
+Will NOT match
+
+* `sensor/2/test/on`
+* `sensor/abc/on`
+
+#### Multi Level \#
+
+The \# (hash) is used for multi level
+
+Example: `home/sensor/#`
+
+Will match
+
+* `home/sensor/on`
+* `home/sensor/1/on`
+* `home/sensor/2/on/abc`
+
+
+Will NOT match
+
+* `home/1/sensor/on`
+* `home/sensor/`
